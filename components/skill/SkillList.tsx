@@ -1,19 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { addSkill, fetchUserWithSkills } from "@/app/actions";
+// import { useEffect, useState } from "react";
+import { addSkill } from "@/app/actions";
 
 const SkillList = () => {
-  const [skills, setSkills] = useState<Skill[]>([]);
-  const [user, setUser] = useState<any>(null);
+  // const [user, setUser] = useState<any>(null);
 
-  useEffect(() => {
-    async function loadData() {
-      const data = await fetchUserWithSkills();
-      setUser(data);
-    }
-    loadData();
-  }, []);
+  // useEffect(() => {
+  //   async function loadData() {
+  //     const data = await fetchUserWithSkills();
+  //     setUser(data);
+  //   }
+  //   loadData();
+  // }, []);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -25,7 +24,7 @@ const SkillList = () => {
   return (
     <>
       <h1>User Skills</h1>
-      {user ? (
+      {/* {user ? (
         <>
           <p>Name: {user.name}</p>
           <p>Email: {user.email}</p>
@@ -40,7 +39,7 @@ const SkillList = () => {
         </>
       ) : (
         <p>Loading...</p>
-      )}
+      )} */}
 
       <form onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder="Skill Name" required />
